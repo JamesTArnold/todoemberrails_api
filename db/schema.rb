@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_01_173852) do
+ActiveRecord::Schema.define(version: 2019_05_02_180226) do
+
+  create_table "items", force: :cascade do |t|
+    t.boolean "checked"
+    t.string "text"
+    t.integer "list_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["list_id"], name: "index_items_on_list_id"
+  end
 
   create_table "lists", force: :cascade do |t|
     t.string "name"

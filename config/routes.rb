@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   get "/", to: "status#index"
 
   jsonapi_resources :lists
+  jsonapi_resources :items
 end
